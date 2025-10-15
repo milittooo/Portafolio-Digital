@@ -1,0 +1,1323 @@
+/* ------------------------------------- */
+/* 1. Reset Básico y Tipografía          */
+/* ------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+html {
+    scroll-behavior: smooth; 
+}
+
+/* Scroll suave personalizado */
+html {
+    scroll-padding-top: 80px;
+}
+
+/* Efectos de scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.6s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+body {
+    font-family: 'Nunito', sans-serif;
+    line-height: 1.6;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+h1, h2, h3 {
+    font-weight: 700; 
+}
+
+.contenedor {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ------------------------------------- */
+/* 2. Estilo del Encabezado (Hero)       */
+/* ------------------------------------- */
+.hero {
+    background: linear-gradient(135deg, #0000a0 0%, #2310d9 50%, #2f15ed 100%);
+    color: white;
+    padding: 80px 0 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de partículas animadas en el fondo */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(1deg); }
+}
+
+.hero h1 {
+    font-size: 3.2em;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 2;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: slideInDown 1s ease-out;
+}
+
+.subtitulo-carga {
+    font-size: 1.6em;
+    margin-bottom: 40px;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+    opacity: 0.95;
+    animation: slideInUp 1s ease-out 0.3s both;
+}
+
+.texto-presentacion {
+    color: #f8f9fa; 
+    max-width: 850px; 
+    margin: 40px auto 0;
+    font-size: 1.2em;
+    line-height: 1.7;
+    font-weight: 400;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-out 0.6s both;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Animaciones de entrada */
+@keyframes slideInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.canva-animacion-contenedor {
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: slideInUp 1s ease-out 0.9s both;
+}
+
+.animacion-tic {
+    max-width: 650px; 
+    width: 90%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.animacion-tic:hover {
+    transform: scale(1.02);
+}
+
+/* Botón de llamada a la acción */
+.cta-container {
+    margin-top: 50px;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 1s ease-out 1.2s both;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    color: #2310d9;
+    padding: 16px 32px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #2310d9, #2f15ed);
+    transition: left 0.3s ease;
+    z-index: -1;
+}
+
+.cta-button:hover {
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(35, 16, 217, 0.3);
+}
+
+.cta-button:hover::before {
+    left: 0;
+}
+
+.cta-button svg {
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+    transform: translateX(5px);
+}
+
+/* Nombre clickeable en el hero */
+.nombre-clickeable {
+    color: #ffffff;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    transition: all 0.3s ease;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-bottom: 2px solid transparent;
+    padding-bottom: 2px;
+}
+
+.nombre-clickeable:hover {
+    color: #f8f9fa;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-bottom-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+.nombre-clickeable:active {
+    transform: translateY(0);
+    color: #e9ecef;
+}
+
+/* Indicador simple y elegante */
+.nombre-clickeable {
+    border-bottom: 2px solid #ffffff;
+    padding-bottom: 2px;
+    transition: all 0.3s ease;
+}
+
+.nombre-clickeable:hover {
+    border-bottom-color: #f8f9fa;
+    border-bottom-width: 3px;
+}
+
+
+/* Indicador de click simple */
+.indicador-click {
+    color: #f8f9fa;
+    font-size: 0.9em;
+    margin: 10px 0 20px 0;
+    opacity: 0.8;
+    font-style: italic;
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+/* ------------------------------------- */
+/* 3. Menú Lateral (Sidebar) y Hamburguesa */
+/* ------------------------------------- */
+
+#menu-toggle, .submenu-toggle {
+    display: none;
+}
+
+.menu-btn {
+    position: fixed; 
+    top: 20px;
+    left: 20px;
+    z-index: 1000; 
+    cursor: pointer;
+    font-size: 2em;
+    color: #2310d9; 
+    background: white;
+    padding: 5px 12px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, left 0.3s;
+}
+
+.sidebar {
+    height: 100vh;
+    width: 280px; 
+    position: fixed;
+    top: 0;
+    left: -280px; 
+    background-color: #0000a0; 
+    padding-top: 20px;
+    transition: left 0.3s;
+    z-index: 999;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    overflow-y: auto; 
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li a, .sidebar nav ul li label {
+    padding: 12px 25px;
+    text-decoration: none;
+    font-size: 1.1em;
+    color: white;
+    display: block;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.sidebar nav ul li a:hover, .sidebar nav ul li label:hover {
+    background-color: #2310d9;
+}
+
+.item-principal {
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+.menu-group label.item-principal::after {
+    content: '\25BC';
+    font-size: 0.8em;
+    float: right;
+    transition: transform 0.3s;
+}
+
+.submenu-toggle:checked + label.item-principal::after {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out;
+    background-color: #00008b; 
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submenu-toggle:checked ~ .submenu {
+    max-height: 1000px; 
+}
+
+.submenu li a {
+    padding: 8px 25px 8px 45px; 
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.desactivado-menu .item-principal {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.desactivado-menu .submenu a {
+    pointer-events: none;
+    opacity: 0.7;
+}
+
+.anio-cursado {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+}
+
+#menu-toggle:checked ~ .sidebar {
+    left: 0;
+}
+
+#menu-toggle:checked ~ .menu-btn {
+    left: 290px;
+    transform: rotate(90deg);
+}
+
+/* ------------------------------------- */
+/* 4. Diseño y Carrusel Horizontal       */
+/* ------------------------------------- */
+.proyectos {
+    padding: 100px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.proyectos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #2310d9, transparent);
+}
+
+.proyectos h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    font-size: 2.5em;
+    color: #2310d9;
+    position: relative;
+    z-index: 2;
+}
+
+.proyectos h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(135deg, #2310d9, #2f15ed);
+    border-radius: 2px;
+}
+
+.carrusel-wrapper {
+    position: relative;
+    margin: 0 auto; 
+}
+
+.grilla-scroll {
+    overflow-x: auto;
+    overflow-y: hidden; 
+    padding-bottom: 20px; 
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding-left: 50px; 
+    padding-right: 50px; 
+}
+
+.grilla-scroll::-webkit-scrollbar {
+    display: none;
+}
+
+.grilla-proyectos {
+    display: flex;
+    gap: 30px; 
+    flex-wrap: nowrap;
+    margin: 0; 
+    padding: 0; 
+}
+
+/* ESTILO CLAVE PARA QUE EL ENLACE LUZCA COMO TARJETA */
+.tarjeta-proyecto {
+    min-width: 300px; /* Asegura un ancho fijo para que el texto tenga donde envolver */
+    flex-shrink: 0; 
+    
+    background-color: #f0f0f0; 
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #2310d9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    transition: transform 0.3s ease;
+    
+    min-height: 270px; /* Suficiente altura para que el texto baje */
+    
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    text-align: left;
+
+    text-decoration: none; 
+    color: #333333; 
+    cursor: pointer;
+}
+
+.tarjeta-proyecto:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* FIX: Ajuste del Párrafo para asegurar que el texto baje de línea */
+.tarjeta-proyecto p {
+    line-height: 1.4;
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+    /* Esto es CLAVE: asegura que el texto se comporte normalmente y baje de línea */
+    white-space: normal; 
+    max-width: 100%; 
+}
+
+
+/* Regla para las tarjetas DIV o A de los años futuros */
+.desactivado-grid {
+    opacity: 0.5;
+    pointer-events: none; /* Evita cualquier interacción */
+    cursor: default;
+}
+
+/* Regla para las secciones de años futuros */
+.proyectos.desactivado {
+    opacity: 0.4;
+    cursor: default; 
+    transition: opacity 0.5s ease;
+}
+
+/* ... código cabecera materia, botones, etc. ... */
+
+.tarjeta-proyecto .cabecera-materia {
+    display: flex;
+    align-items: flex-start; 
+    margin-bottom: 15px; 
+    width: 100%; 
+}
+
+.tarjeta-proyecto h3 {
+    color: #2310d9; 
+    margin: 0; 
+    margin-left: 10px; 
+    font-size: 1.1em;
+    line-height: 1.3; 
+    flex-grow: 1; 
+    overflow-wrap: break-word; 
+    word-wrap: break-word;
+}
+
+.tarjeta-proyecto img {
+    width: 60px !important; 
+    height: 60px !important; 
+    display: inline-block; 
+    object-fit: contain; 
+    border-radius: 4px;
+    margin: 0; 
+    flex-shrink: 0; 
+}
+
+.tarjeta-bonus {
+    background-color: #e6f0ff; 
+    border: 1px solid #2f15ed; 
+}
+
+.tarjeta-bonus h3 {
+    color: #2f15ed; 
+}
+
+.nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background-color: rgba(35, 16, 217, 0.7);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 1.5em;
+    line-height: 1; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #2310d9;
+}
+
+.prev-btn {
+    left: 10px; 
+}
+
+.next-btn {
+    right: 10px; 
+}
+
+
+/* ------------------------------------- */
+/* 5. Estilo de Trabajos Detallados (Para los nuevos HTML) */
+/* ------------------------------------- */
+
+.trabajos-detallados {
+    background-color: #f7f7f7; 
+    padding: 60px 0;
+    border-top: 5px solid #2310d9;
+}
+
+.trabajo-unidad {
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.trabajo-unidad h3 {
+    color: #2310d9;
+    font-size: 1.8em;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.trabajo-unidad h4 {
+    color: #333;
+    font-size: 1.3em;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.trabajo-unidad p {
+    margin-bottom: 15px;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.trabajo-unidad .introduccion {
+    font-style: italic;
+    color: #555;
+}
+
+.volver-carrusel {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 10px 15px;
+    background-color: #2310d9;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    font-weight: 700;
+}
+
+.volver-carrusel:hover {
+    background-color: #0000a0;
+}
+
+/* ------------------------------------- */
+/* 6. Pie de Página y Media Queries      */
+/* ------------------------------------- */
+footer {
+    padding: 20px 0;
+    background-color: #0000a0; 
+    color: #ffffff;
+    text-align: center; 
+    font-size: 0.9em;
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2em; 
+    }
+    .subtitulo-carga {
+        font-size: 1.2em;
+    }
+}
+
+/* ------------------------------------- */
+/* 7. Estilos para Páginas de Materias  */
+/* ------------------------------------- */
+
+/* Navegación de regreso */
+.nav-materia {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    border-bottom: 2px solid #0000a0;
+}
+
+.btn-volver {
+    display: inline-block;
+    background-color: #0000a0;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 700;
+    transition: background-color 0.3s;
+    margin-left: 20px;
+}
+
+.btn-volver:hover {
+    background-color: #000080;
+}
+
+/* Header de la materia */
+.header-materia {
+    background: linear-gradient(135deg, #0000a0, #4a90e2);
+    color: white;
+    padding: 60px 0;
+}
+
+.info-materia {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.icono-materia {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: white;
+    padding: 8px;
+    object-fit: contain;
+}
+
+.texto-materia h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+}
+
+.descripcion-materia {
+    font-size: 1.2em;
+    line-height: 1.6;
+    opacity: 0.9;
+}
+
+/* Contenido principal */
+.contenido-materia {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.seccion-contenido {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border-left: 5px solid #0000a0;
+}
+
+.seccion-contenido h2 {
+    color: #0000a0;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0000a0;
+    padding-bottom: 10px;
+}
+
+.contenido-texto {
+    font-size: 1.1em;
+    line-height: 1.7;
+}
+
+.contenido-texto ul {
+    margin: 20px 0;
+    padding-left: 30px;
+}
+
+.contenido-texto li {
+    margin-bottom: 10px;
+}
+
+/* Grid de trabajos */
+.grid-trabajos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.tarjeta-trabajo {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-trabajo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.tarjeta-trabajo h3 {
+    color: #0000a0;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.fecha-trabajo {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.archivos-trabajo {
+    margin-top: 15px;
+}
+
+.btn-archivo {
+    display: inline-block;
+    background-color: #0000a0;
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 0.9em;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-archivo:hover {
+    background-color: #000080;
+}
+
+/* Recursos */
+.recursos-lista {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.recurso-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.recurso-item h4 {
+    color: #0000a0;
+    margin-bottom: 10px;
+}
+
+/* Footer de materia */
+.footer-materia {
+    background-color: #0000a0;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+.footer-materia p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Responsive para páginas de materias */
+@media (max-width: 768px) {
+    .info-materia {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .icono-materia {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .texto-materia h1 {
+        font-size: 2em;
+    }
+    
+    .grid-trabajos {
+        grid-template-columns: 1fr;
+    }
+    
+    .seccion-contenido {
+        padding: 20px;
+    }
+}
+
+/* ------------------------------------- */
+/* 8. Estilos para Página de Presentación */
+/* ------------------------------------- */
+
+.foto-perfil {
+    flex-shrink: 0;
+}
+
+.foto-personal {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    background-color: white;
+}
+
+.grid-intereses {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.tarjeta-interes {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #e0e0e0;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta-interes:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.tarjeta-interes h3 {
+    color: #0000a0;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.info-contacto {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.contacto-item {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    text-align: center;
+}
+
+.contacto-item h4 {
+    color: #0000a0;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+}
+
+.contacto-item p {
+    margin: 0;
+    color: #666;
+    font-weight: 500;
+}
+
+/* Responsive para página de presentación */
+@media (max-width: 768px) {
+    .foto-personal {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .grid-intereses {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-contacto {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ------------------------------------- */
+/* 9. Estilos para Bonus Track (Galería) */
+/* ------------------------------------- */
+
+.galeria-experiencias {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.experiencia-item {
+    background-color: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.experiencia-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+}
+
+.imagen-experiencia {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.imagen-experiencia img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.experiencia-item:hover .imagen-experiencia img {
+    transform: scale(1.05);
+}
+
+.info-experiencia {
+    padding: 25px;
+}
+
+.info-experiencia h3 {
+    color: #0000a0;
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.fecha-experiencia {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 15px;
+    font-style: italic;
+}
+
+.info-experiencia p:last-child {
+    line-height: 1.6;
+    color: #555;
+}
+
+.reflexiones-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.reflexion-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    border-left: 5px solid #0000a0;
+    transition: transform 0.3s;
+}
+
+.reflexion-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.12);
+}
+
+.reflexion-item h3 {
+    color: #0000a0;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+
+.reflexion-item p {
+    line-height: 1.6;
+    color: #555;
+    margin: 0;
+}
+
+/* Responsive para Bonus Track */
+@media (max-width: 768px) {
+    .galeria-experiencias {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .reflexiones-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .experiencia-item {
+        margin-bottom: 20px;
+    }
+}
+
+/* ------------------------------------- */
+/* 10. Estilos para Galería Multimedia   */
+/* ------------------------------------- */
+
+.galeria-multimedia {
+    margin-top: 20px;
+}
+
+.multimedia-item {
+    margin-bottom: 40px;
+}
+
+.multimedia-item h3 {
+    color: #0000a0;
+    font-size: 1.4em;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #0000a0;
+    padding-bottom: 8px;
+}
+
+.imagenes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 15px;
+}
+
+.imagen-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.imagen-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.imagen-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.imagen-item:hover img {
+    transform: scale(1.05);
+}
+
+.descripcion-imagen {
+    padding: 15px;
+    margin: 0;
+    color: #555;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-top: 15px;
+}
+
+.video-item {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.video-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.descripcion-video {
+    padding: 15px;
+    margin: 0;
+    color: #555;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+/* Responsive para galería multimedia */
+@media (max-width: 768px) {
+    .imagenes-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .videos-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-container {
+        height: 180px;
+    }
+}
+
+/* Responsive para la página de inicio */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2em;
+        margin-bottom: 10px;
+    }
+    
+    .subtitulo-carga {
+        font-size: 1.3em;
+        margin-bottom: 30px;
+    }
+    
+    .texto-presentacion {
+        font-size: 1.1em;
+        margin: 30px auto 0;
+    }
+    
+    .animacion-tic {
+        max-width: 500px;
+    }
+    
+    .cta-button {
+        padding: 14px 28px;
+        font-size: 1em;
+    }
+    
+    .proyectos h2 {
+        font-size: 2em;
+        margin-bottom: 40px;
+    }
+    
+    .proyectos {
+        padding: 80px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 60px 0 80px 0;
+    }
+    
+    .hero h1 {
+        font-size: 1.8em;
+    }
+    
+    .subtitulo-carga {
+        font-size: 1.1em;
+    }
+    
+    .texto-presentacion {
+        font-size: 1em;
+    }
+    
+    .animacion-tic {
+        max-width: 400px;
+    }
+    
+    .cta-button {
+        padding: 12px 24px;
+        font-size: 0.9em;
+    }
+}
+
+/* ------------------------------------- */
+/* Estilos para tarjetas clickeables completas */
+/* ------------------------------------- */
+
+/* Mejora la experiencia visual de las tarjetas clickeables */
+.tarjeta-proyecto {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de transición suave para el hover */
+.tarjeta-proyecto {
+    transition: all 0.3s ease;
+}
+
+/* Mejora el efecto hover existente */
+.tarjeta-proyecto:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(35, 16, 217, 0.15);
+    border-color: #2310d9;
+}
+
+/* Efecto de pulsación al hacer clic */
+.tarjeta-proyecto:active {
+    transform: translateY(-3px) scale(0.98);
+    transition: all 0.1s ease;
+}
+
+/* Indicador visual de que la tarjeta es clickeable */
+.tarjeta-proyecto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(35, 16, 217, 0.05) 0%, rgba(35, 16, 217, 0.02) 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.tarjeta-proyecto:hover::before {
+    opacity: 1;
+}
+
+/* Mejora el estilo del enlace "Ver Detalle" para que se integre mejor */
+.tarjeta-proyecto .ver-detalle {
+    position: relative;
+    z-index: 2;
+    background: linear-gradient(135deg, #2310d9, #2f15ed);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: all 0.3s ease;
+    display: inline-block;
+    margin-top: auto;
+    align-self: flex-start;
+}
+
+.tarjeta-proyecto .ver-detalle:hover {
+    background: linear-gradient(135deg, #2f15ed, #2310d9);
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(35, 16, 217, 0.3);
+}
+
+/* Asegura que el contenido de la tarjeta tenga el z-index correcto */
+.tarjeta-proyecto .cabecera-materia,
+.tarjeta-proyecto p {
+    position: relative;
+    z-index: 1;
+}

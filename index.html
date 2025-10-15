@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio Digital - Milagros Guerrero</title>
+    <link rel="icon" type="image/png" href="img/favicon.png">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-btn">&#9776;</label>
+
+    <aside class="sidebar">
+        <nav>
+            <ul>
+                <li><a href="about.html" class="item-principal">ACERCA DE MÍ / CONTACTO</a></li>
+
+                <li class="menu-group">
+                    <input type="checkbox" id="menu-1" class="submenu-toggle">
+                    <label for="menu-1" class="item-principal anio-cursado">PRIMER AÑO</label>
+                    <ul class="submenu">
+                        <li><a href="arquitectura.html">Arquitectura de los Ordenadores</a></li>
+                        <li><a href="sistemas-operativos.html">Sistemas Operativos</a></li>
+                        <li><a href="comunicacion-i.html">Comunicación I</a></li>
+                        <li><a href="ofimatica-i.html">Software Ofimático I</a></li>
+                        <li><a href="pedagogia.html">Pedagogía</a></li>
+                        <li><a href="filosofia.html">Filosofía</a></li>
+                        <li><a href="taller-ole.html">Taller de Oralidad, Lectura y Escritura</a></li>
+                        <li><a href="practica-i.html">Práctica I</a></li>
+                        <li><a href="teologia-i.html">Teología I</a></li>
+                        <li><a href="bonus-track.html">Bonus Track</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-group desactivado-menu">
+                    <input type="checkbox" id="menu-2" class="submenu-toggle">
+                    <label for="menu-2" class="item-principal">SEGUNDO AÑO (Próx.)</label>
+                    <ul class="submenu">
+                        <li><a href="#segundo-ano">Lógica y Programación</a></li>
+                        <li><a href="#segundo-ano">Software Ofimático II</a></li>
+                        <li><a href="#segundo-ano">Comunicación II</a></li>
+                        <li><a href="#segundo-ano">Tecnologías de la Información y la Comunicación</a></li>
+                        <li><a href="#segundo-ano">Sujetos de Aprendizaje</a></li>
+                        <li><a href="#segundo-ano">Aplicaciones de Internet</a></li>
+                        <li><a href="#segundo-ano">Didáctica General</a></li>
+                        <li><a href="#segundo-ano">Psicología Educacional</a></li>
+                        <li><a href="#segundo-ano">Taller de Educación Vocal Corporal</a></li>
+                        <li><a href="#segundo-ano">Práctica II</a></li>
+                        <li><a href="#segundo-ano">Teología II</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-group desactivado-menu">
+                    <input type="checkbox" id="menu-3" class="submenu-toggle">
+                    <label for="menu-3" class="item-principal">TERCER AÑO (Próx.)</label>
+                    <ul class="submenu">
+                        <li><a href="#tercer-ano">Procesamiento de Datos</a></li>
+                        <li><a href="#tercer-ano">Comunicación III</a></li>
+                        <li><a href="#tercer-ano">Métodos de la Enseñanza de las TIC</a></li>
+                        <li><a href="#tercer-ano">Sistemas de Información</a></li>
+                        <li><a href="#tercer-ano">Redes, Computadoras y Telemática</a></li>
+                        <li><a href="#tercer-ano">Sociología de la Educación</a></li>
+                        <li><a href="#tercer-ano">Lengua Extranjera: Inglés</a></li>
+                        <li><a href="#tercer-ano">Educación Sexual Integral</a></li>
+                        <li><a href="#tercer-ano">Práctica de la Enseñanza</a></li>
+                        <li><a href="#tercer-ano">Teología III</a></li>
+                    </ul>
+                </li>
+
+                <li class="menu-group desactivado-menu">
+                    <input type="checkbox" id="menu-4" class="submenu-toggle">
+                    <label for="menu-4" class="item-principal">CUARTO AÑO (Próx.)</label>
+                    <ul class="submenu">
+                        <li><a href="#cuarto-ano">Tecnologías de la Información y la Comunicación II</a></li>
+                        <li><a href="#cuarto-ano">Diseño Multimedia</a></li>
+                        <li><a href="#cuarto-ano">Sistemas Empresariales</a></li>
+                        <li><a href="#cuarto-ano">Legislación y Auditorías de las TIC's</a></li>
+                        <li><a href="#cuarto-ano">Formación Ética y Ciudadana</a></li>
+                        <li><a href="#cuarto-ano">Historia de la Política y la Educación Argentina</a></li>
+                        <li><a href="#cuarto-ano">Residencia Pedagógica</a></li>
+                        <li><a href="#cuarto-ano">Teología IV</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <header class="hero" id="inicio">
+        <div class="contenedor">
+
+            <h1>¡Hola, mi nombre es <span class="nombre-clickeable">Milagros Guerrero</span> y te doy la bienvenida a mi Portafolio Digital!</h1>
+            <p class="indicador-click">Haz clic en mi nombre para conocer más sobre mí</p>
+            <h2 class="subtitulo-carga">Soy estudiante de primer año del "Profesorado de Educación Secundaria en</h2>
+
+            <div class="canva-animacion-contenedor">
+                <img src="img/tic-animado.gif" alt="Animación de progreso TIC" class="animacion-tic">
+            </div>
+
+            <p class="texto-presentacion">
+                Este es mi portafolio digital, creado para mostrar lo realizado durante este primer año.
+                Acá encontrarás algunas actividades y trabajos que reflejan mi aprendizaje y desarrollo académico en estas áreas.
+                Espero que este recorrido te permita conocer mejor mi trabajo y el proceso que estoy llevando adelante en mi formación.
+                Gracias por visitar y tomarte el tiempo de explorar mi portafolio.
+            </p>
+
+            <div class="cta-container">
+                <a href="#primer-ano" class="cta-button">
+                    <span>Explorar Mi Trabajo</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+            </div>
+
+        </div>
+    </header>
+
+    <section class="proyectos reveal" id="primer-ano">
+        <div class="contenedor">
+
+            <h2>Primer Año</h2>
+
+            <div class="carrusel-wrapper">
+
+                <button class="nav-btn prev-btn" onclick="scrollCarousel('grilla-primer-ano', -350)">&#10094;</button>
+
+                <div class="grilla-scroll" id="grilla-primer-ano">
+                    <div class="grilla-proyectos">
+
+                        <div class="tarjeta-proyecto" id="arquitectura">
+                            <div class="cabecera-materia">
+                                <img src="img/Arquitectura.png" alt="Arquitectura de los Ordenadores Personales">
+                                <h3>Arquitectura de los Ordenadores Personales</h3>
+                            </div>
+                            <p>
+                                Comprensión del funcionamiento interno de los sistemas informáticos en la era digital.
+                                <br>
+                                Se centra en el análisis de los fundamentos de su arquitectura y organización.
+                            </p>
+                            <a href="arquitectura.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="sistemas-operativos">
+                            <div class="cabecera-materia">
+                                <img src="img/SO.png" alt="Sistemas Operativos">
+                                <h3>Sistemas Operativos</h3>
+                            </div>
+                            <p>
+                                Análisis de la estructura, funciones y gestión de recursos (procesos y memoria).
+                                <br>
+                                Se busca el dominio de las interfaces, comparando Windows con GNU/Linux.
+                            </p>
+                            <a href="sistemas-operativos.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="comunicacion-i">
+                            <div class="cabecera-materia">
+                                <img src="img/Comunicacion.png" alt="Comunicación I">
+                                <h3>Comunicación I</h3>
+                            </div>
+                            <p>
+                                Explora cómo la comunicación facilita la expresión, el diálogo
+                                <br>
+                                y la construcción dinámica de la vida en comunidad.
+                            </p>
+                            <a href="comunicacion-i.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="ofimatica-i">
+                            <div class="cabecera-materia">
+                                <img src="img/Ofimatica.png" alt="Software Ofimático I">
+                                <h3>Software Ofimático I</h3>
+                            </div>
+                            <p>
+                                Desarrollo de habilidades en el uso de herramientas de oficina (procesador de texto, hoja de cálculo y presentaciones).
+                                <br>
+                                Se enfoca en la creación, edición y gestión eficiente de documentos digitales.
+                            </p>
+                            <a href="ofimatica-i.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="pedagogia">
+                            <div class="cabecera-materia">
+                                <img src="img/Pedagogia.png" alt="Pedagogía">
+                                <h3>Pedagogía</h3>
+                            </div>
+                            <p>
+                                Explora el saber fundamental de la práctica docente, analizando su evolución histórica.
+                                <br>
+                                Se estudian corrientes desde una perspectiva cristiano-católica.
+                                <br>
+                                Aborda problemas actuales como la educación y las TIC.
+                            </p>
+                            <a href="pedagogia.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="filosofia">
+                            <div class="cabecera-materia">
+                                <img src="img/Filosofia.png" alt="Filosofía">
+                                <h3>Filosofía</h3>
+                            </div>
+                            <p>
+                                Fundamental para cuestionar críticamente el pensamiento y las acciones en la sociedad.
+                                <br>
+                                Promueve la integración de Fe, Cultura y Ciencia para la reflexión ética sobre el sentido de la vida.
+                            </p>
+                            <a href="filosofia.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="taller-ole">
+                            <div class="cabecera-materia">
+                                <img src="img/Taller.png" alt="Taller de Oralidad, Lectura y Escritura">
+                                <h3>Taller de Oralidad, Lectura y Escritura</h3>
+                            </div>
+                            <p>
+                                Desarrolla habilidades para la comprensión y producción eficaz de textos académicos.
+                                <br>
+                                Esta práctica transversal facilita el acceso al conocimiento y la autorregulación de los aprendizajes.
+                            </p>
+                            <a href="taller-ole.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="practica-i">
+                            <div class="cabecera-materia">
+                                <img src="img/Practica.png" alt="Práctica I">
+                                <h3>Práctica I</h3>
+                            </div>
+                            <p>
+                                Orienta la formación inicial docente, proveyendo herramientas conceptuales.
+                                <br>
+                                Se analizan las prácticas y el contexto en instituciones escolares y socioeducativas.
+                            </p>
+                            <a href="practica-i.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto" id="teologia-i">
+                            <div class="cabecera-materia">
+                                <img src="img/Teología.png" alt="Teología I">
+                                <h3>Teología I</h3>
+                            </div>
+                            <p>
+                                Provee fundamentos sólidos integrando la Fe, la Filosofía y la Ciencia.
+                                <br>
+                                Orienta la reflexión sobre la dimensión trascendente y el diálogo interior del profesional cristiano.
+                            </p>
+                            <a href="teologia-i.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                        <div class="tarjeta-proyecto tarjeta-bonus" id="bonus-track">
+                            <div class="cabecera-materia">
+                                <img src="img/Bonus.png" alt="Ícono de Bonus Track">
+                                <h3>Bonus Track: Experiencias del Año</h3>
+                            </div>
+                            <p>
+                                Galería de Recuerdos y Vivencias que hicieron del
+                                <br>
+                                primer año una experiencia inolvidable.
+                            </p>
+                            <a href="bonus-track.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="nav-btn next-btn" onclick="scrollCarousel('grilla-primer-ano', 350)">&#10095;</button>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="proyectos desactivado" id="segundo-ano">
+        <div class="contenedor">
+            <h2>Segundo Año - Próximamente</h2>
+            <div class="carrusel-wrapper">
+                <button class="nav-btn prev-btn" onclick="scrollCarousel('grilla-segundo-ano', -350)">&#10094;</button>
+                <div class="grilla-scroll" id="grilla-segundo-ano">
+                    <div class="grilla-proyectos">
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Lógica y Programación">
+                                <h3>Lógica y Programación</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Software Ofimático II">
+                                <h3>Software Ofimático II</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Comunicación II">
+                                <h3>Comunicación II</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="TIC">
+                                <h3>Tecnologías de la Información y la Comunicación</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Sujetos de Aprendizaje">
+                                <h3>Sujetos de Aprendizaje</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Aplicaciones de Internet">
+                                <h3>Aplicaciones de Internet</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Didáctica General">
+                                <h3>Didáctica General</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Psicología Educacional">
+                                <h3>Psicología Educacional</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Taller de Educación Vocal Corporal">
+                                <h3>Taller de Educación Vocal Corporal</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Práctica II">
+                                <h3>Práctica II</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Teología II">
+                                <h3>Teología II</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto tarjeta-bonus">
+                            <div class="cabecera-materia">
+                                <img src="img/Bonus-2026.png" alt="Ícono de Bonus Track 2026">
+                                <h3>Bonus Track: Experiencias del Año</h3>
+                            </div>
+                            <p>
+                                Galería de Recuerdos y Vivencias que hicieron del
+                                <br>
+                                segundo año una experiencia inolvidable.
+                            </p>
+                            <a href="bonus-track.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="nav-btn next-btn" onclick="scrollCarousel('grilla-segundo-ano', 350)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="proyectos desactivado" id="tercer-ano">
+        <div class="contenedor">
+            <h2>Tercer Año - Próximamente</h2>
+            <div class="carrusel-wrapper">
+                <button class="nav-btn prev-btn" onclick="scrollCarousel('grilla-tercer-ano', -350)">&#10094;</button>
+                <div class="grilla-scroll" id="grilla-tercer-ano">
+                    <div class="grilla-proyectos">
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Procesamiento de Datos">
+                                <h3>Procesamiento de Datos</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Comunicación III">
+                                <h3>Comunicación III</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Métodos de la Enseñanza de las TIC">
+                                <h3>Métodos de la Enseñanza de las TIC</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Sistemas de Información">
+                                <h3>Sistemas de Información</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Redes, Computadoras y Telemática">
+                                <h3>Redes, Computadoras y Telemática</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Sociología de la Educación">
+                                <h3>Sociología de la Educación</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Inglés">
+                                <h3>Lengua Extranjera: Inglés</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="ESI">
+                                <h3>Educación Sexual Integral</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Práctica de la Enseñanza">
+                                <h3>Práctica de la Enseñanza</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Teología III">
+                                <h3>Teología III</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto tarjeta-bonus">
+                            <div class="cabecera-materia">
+                                <img src="img/Bonus-2027.png" alt="Ícono de Bonus Track 2027">
+                                <h3>Bonus Track: Experiencias del Año</h3>
+                            </div>
+                            <p>
+                                Galería de Recuerdos y Vivencias que hicieron del
+                                <br>
+                                tercer año una experiencia inolvidable.
+                            </p>
+                            <a href="bonus-track.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="nav-btn next-btn" onclick="scrollCarousel('grilla-tercer-ano', 350)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="proyectos desactivado" id="cuarto-ano">
+        <div class="contenedor">
+            <h2>Cuarto Año - Próximamente</h2>
+            <div class="carrusel-wrapper">
+                <button class="nav-btn prev-btn" onclick="scrollCarousel('grilla-cuarto-ano', -350)">&#10094;</button>
+                <div class="grilla-scroll" id="grilla-cuarto-ano">
+                    <div class="grilla-proyectos">
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Tecnologías de la Información y la Comunicación II">
+                                <h3>Tecnologías de la Información y la Comunicación II</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Diseño Multimedia">
+                                <h3>Diseño Multimedia</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Sistemas Empresariales">
+                                <h3>Sistemas Empresariales</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Legislación y Auditorías de las TIC's">
+                                <h3>Legislación y Auditorías de las TIC's</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Formación Ética y Ciudadana">
+                                <h3>Formación Ética y Ciudadana</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Historia de la Política y la Educación Argentina">
+                                <h3>Historia de la Política y la Educación Argentina</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Residencia Pedagógica">
+                                <h3>Residencia Pedagógica</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto">
+                            <div class="cabecera-materia">
+                                <img src="img/icono-materia.jpg" alt="Teología IV">
+                                <h3>Teología IV</h3>
+                            </div>
+                            <p>Contenido no disponible.</p>
+                        </div>
+                        <div class="tarjeta-proyecto tarjeta-bonus">
+                            <div class="cabecera-materia">
+                                <img src="img/Bonus-2028.png" alt="Ícono de Bonus Track 2028">
+                                <h3>Bonus Track: Experiencias del Año</h3>
+                            </div>
+                            <p>
+                                Galería de Recuerdos y Vivencias que hicieron del
+                                <br>
+                                cuarto año una experiencia inolvidable.
+                            </p>
+                            <a href="bonus-track.html" class="ver-detalle">Ver Detalle de la Materia &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+                <button class="nav-btn next-btn" onclick="scrollCarousel('grilla-cuarto-ano', 350)">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
