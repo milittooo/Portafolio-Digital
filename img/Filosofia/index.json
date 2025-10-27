@@ -1,0 +1,7 @@
+{
+    "videoDestacado": {
+        "titulo": "Trabajo Destacado - Filosofía",
+        "src": "./Filosofia.mp4",
+        "tipo": "video/mp4"
+    }
+}
