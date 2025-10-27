@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Software Ofimático I - Mi Portafolio Digital</title>
+    <link rel="icon" type="image/png" href="img/Ofimatica.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegación de regreso -->
+    <nav class="nav-materia">
+        <a href="index.html" class="btn-volver">← Volver al Portafolio</a>
+    </nav>
+
+    <!-- Header de la materia -->
+    <header class="header-materia">
+        <div class="contenedor">
+            <div class="info-materia">
+                <img src="img/Ofimatica.png" alt="Software Ofimático I" class="icono-materia">
+                <div class="texto-materia">
+                    <h1>Software Ofimático I</h1>
+                    <p class="descripcion-materia">
+                        Desarrollo de habilidades en el uso de herramientas de oficina (procesador de texto, hoja de cálculo y presentaciones).
+                        Se enfoca en la creación, edición y gestión eficiente de documentos digitales.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido-materia">
+        <div class="contenedor">
+            
+            <!-- Sección de objetivos -->
+            <section class="seccion-contenido">
+                <h2>Objetivos de la Materia</h2>
+                <div class="contenido-texto">
+                    <p>En Software Ofimático I se busca:</p>
+                    <ul>
+                        <li>Dominar el uso de procesadores de texto (Word)</li>
+                        <li>Desarrollar habilidades en hojas de cálculo (Excel)</li>
+                        <li>Crear presentaciones efectivas (PowerPoint)</li>
+                        <li>Gestionar documentos digitales de manera eficiente</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Recurso destacado (embed) -->
+            <section class="seccion-contenido">
+                <h2>Recurso Destacado</h2>
+                <div class="destacado-presentacion">
+                    <div class="presentacion-embed" style="position:relative;width:100%;max-width:960px;margin:0 auto;aspect-ratio:16/9;">
+                        <iframe id="iframe-ofimatica" loading="lazy" allowfullscreen title="Wayground - Ingresar código"
+                                style="position:absolute;inset:0;border:0;width:100%;height:100%;min-height:500px;"
+                                src="https://wayground.com/join" referrerpolicy="strict-origin-when-cross-origin"
+                                allow="clipboard-read; clipboard-write; fullscreen">
+                        </iframe>
+                    </div>
+                    <p style="text-align:center;margin-top:12px;">Enlace alternativo:</p>
+                    <p style="text-align:center;">
+                        <a id="btn-ofimatica" class="btn-archivo" href="https://wayground.com/join" target="_blank" rel="noopener noreferrer">Abrir en Wayground</a>
+                    </p>
+                </div>
+                <script>
+                // Para configurar: reemplaza las variables linkEmbed y linkPublico con tu enlace
+                (function(){
+                    const linkEmbed = '';
+                    const linkPublico = '';
+                    var iframe = document.getElementById('iframe-ofimatica');
+                    var btn = document.getElementById('btn-ofimatica');
+                    if (linkEmbed) iframe.src = linkEmbed;
+                    if (linkPublico) btn.href = linkPublico;
+                })();
+                </script>
+            </section>
+
+>
+
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-materia">
+        <div class="contenedor">
+            <p>&copy; 2024 - Milagros Guerrero - Portafolio Digital</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

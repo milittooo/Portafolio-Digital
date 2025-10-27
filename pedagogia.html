@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedagogía - Mi Portafolio Digital</title>
+    <link rel="icon" type="image/png" href="img/Pedagogia.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegación de regreso -->
+    <nav class="nav-materia">
+        <a href="index.html" class="btn-volver">← Volver al Portafolio</a>
+    </nav>
+
+    <!-- Header de la materia -->
+    <header class="header-materia">
+        <div class="contenedor">
+            <div class="info-materia">
+                <img src="img/Pedagogia.png" alt="Pedagogía" class="icono-materia">
+                <div class="texto-materia">
+                    <h1>Pedagogía</h1>
+                    <p class="descripcion-materia">
+                        Explora el saber fundamental de la práctica docente, analizando su evolución histórica.
+                        Se estudian corrientes desde una perspectiva cristiano-católica.
+                        Aborda problemas actuales como la educación y las TIC.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido-materia">
+        <div class="contenedor">
+            
+            <!-- Sección de objetivos -->
+            <section class="seccion-contenido">
+                <h2>Objetivos de la Materia</h2>
+                <div class="contenido-texto">
+                    <p>En Pedagogía se busca:</p>
+                    <ul>
+                        <li>Comprender los fundamentos de la práctica docente</li>
+                        <li>Analizar la evolución histórica de la pedagogía</li>
+                        <li>Estudiar corrientes pedagógicas desde una perspectiva cristiana</li>
+                        <li>Reflexionar sobre la educación y las tecnologías</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="seccion-contenido">
+                <h2>Trabajo Destacado</h2>
+                <div id="destacado-audio" class="destacado-audio">
+                    <div class="audio-placeholder">Cargando podcast...</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-materia">
+        <div class="contenedor">
+            <p>&copy; 2024 - Milagros Guerrero - Portafolio Digital</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const container = document.getElementById('destacado-audio');
+        if (!container) return;
+        const audio = document.createElement('audio');
+        audio.controls = true;
+        audio.style.width = '100%';
+        const source = document.createElement('source');
+        source.src = 'img/Pedagogia/podcast.mp3';
+        source.type = 'audio/mpeg';
+        audio.appendChild(source);
+        container.innerHTML = '';
+        container.appendChild(audio);
+
+        audio.addEventListener('error', () => {
+            container.innerHTML = '<p class="nota-mensaje">Próximamente podcast. Cuando subas <code>img/Pedagogia/podcast.mp3</code> se mostrará aquí.</p>';
+        });
+
+        fetch('img/Pedagogia/index.json')
+            .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+            .then(data => {
+                if (data && data.podcast && data.podcast.src) {
+                    const cleaned = data.podcast.src.replace(/^\.\/+/, '');
+                    source.src = `img/Pedagogia/${cleaned}`;
+                    if (data.podcast.tipo) source.type = data.podcast.tipo;
+                    audio.load();
+                }
+            })
+            .catch(err => console.log('Podcast JSON no disponible:', err.message));
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

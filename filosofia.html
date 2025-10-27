@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filosofía - Mi Portafolio Digital</title>
+    <link rel="icon" type="image/png" href="img/Filosofia.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegación de regreso -->
+    <nav class="nav-materia">
+        <a href="index.html" class="btn-volver">← Volver al Portafolio</a>
+    </nav>
+
+    <!-- Header de la materia -->
+    <header class="header-materia">
+        <div class="contenedor">
+            <div class="info-materia">
+                <img src="img/Filosofia.png" alt="Filosofía" class="icono-materia">
+                <div class="texto-materia">
+                    <h1>Filosofía</h1>
+                    <p class="descripcion-materia">
+                        Fundamental para cuestionar críticamente el pensamiento y las acciones en la sociedad.
+                        Promueve la integración de Fe, Cultura y Ciencia para la reflexión ética sobre el sentido de la vida.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido-materia">
+        <div class="contenedor">
+            
+            <!-- Sección de objetivos -->
+            <section class="seccion-contenido">
+                <h2>Objetivos de la Materia</h2>
+                <div class="contenido-texto">
+                    <p>En Filosofía se busca:</p>
+                    <ul>
+                        <li>Desarrollar el pensamiento crítico y reflexivo</li>
+                        <li>Cuestionar las acciones y pensamientos de la sociedad</li>
+                        <li>Integrar Fe, Cultura y Ciencia en la reflexión</li>
+                        <li>Profundizar en el sentido ético de la vida</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Sección de trabajos realizados (reemplazada) -->
+            <section class="seccion-contenido">
+                <h2>Trabajo Destacado</h2>
+                <div id="destacado-video" class="destacado-video">
+                    <!-- El video se cargará vía JavaScript -->
+                    <div class="video-placeholder">Cargando video...</div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer (mínimo) -->
+    <footer class="footer-materia">
+        <div class="contenedor">
+            <p>&copy; 2024 - Milagros Guerrero - Portafolio Digital</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        console.log('Intentando cargar el video...');
+        
+        // Usamos la ruta relativa correcta
+        const container = document.getElementById('destacado-video');
+        const video = document.createElement('video');
+        video.controls = true;
+        video.style.maxWidth = '960px';
+        video.style.width = '100%';
+        
+        // Corregimos la ruta del video - quitamos la carpeta img/Filosofia porque ya está en el JSON
+        const source = document.createElement('source');
+        source.src = `img/Filosofia/Filosofia.mp4`;
+        source.type = 'video/mp4';
+        
+        video.appendChild(source);
+        container.innerHTML = '';
+        container.appendChild(video);
+        
+        // Manejamos eventos del video
+        video.addEventListener('error', (e) => {
+            console.error('Error al cargar el video:', e);
+            container.innerHTML = '<p class="error-mensaje">Error al cargar el video. Por favor, intenta más tarde.</p>';
+        });
+        
+        fetch('img/Filosofia/index.json')
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                console.log('JSON encontrado, parseando...');
+                return response.json();
+            })
+            .then(data => {
+                console.log('Datos cargados:', data);
+                if (data.videoDestacado && data.videoDestacado.src) {
+                    const cleaned = data.videoDestacado.src.replace(/^\.\/+/, '');
+                    source.src = `img/Filosofia/${cleaned}`;
+                    source.type = data.videoDestacado.tipo || 'video/mp4';
+                    video.load();
+                }
+            })
+            .catch(error => {
+                console.error('Error detallado:', error);
+            });
+    });
+    </script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teología I - Mi Portafolio Digital</title>
+    <link rel="icon" type="image/png" href="img/Teologia.png">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navegación de regreso -->
+    <nav class="nav-materia">
+        <a href="index.html" class="btn-volver">← Volver al Portafolio</a>
+    </nav>
+
+    <!-- Header de la materia -->
+    <header class="header-materia">
+        <div class="contenedor">
+            <div class="info-materia">
+                <img src="img/Teología.png" alt="Teología I" class="icono-materia">
+                <div class="texto-materia">
+                    <h1>Teología I</h1>
+                    <p class="descripcion-materia">
+                        Provee fundamentos sólidos integrando la Fe, la Filosofía y la Ciencia.
+                        Orienta la reflexión sobre la dimensión trascendente y el diálogo interior del profesional cristiano.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido principal -->
+    <main class="contenido-materia">
+        <div class="contenedor">
+            
+            <!-- Sección de objetivos -->
+            <section class="seccion-contenido">
+                <h2>Objetivos de la Materia</h2>
+                <div class="contenido-texto">
+                    <p>En Teología I se busca:</p>
+                    <ul>
+                        <li>Integrar Fe, Filosofía y Ciencia en la formación</li>
+                        <li>Desarrollar la reflexión sobre la dimensión trascendente</li>
+                        <li>Fortalecer el diálogo interior del profesional cristiano</li>
+                        <li>Proporcionar fundamentos sólidos para la vida espiritual</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Sección de trabajo destacado -->
+            <section class="seccion-contenido">
+                <h2>Trabajo Destacado</h2>
+                <div id="destacado-presentacion" class="destacado-presentacion">
+                    <div class="presentacion-embed" style="position:relative;width:100%;max-width:960px;margin:0 auto;aspect-ratio:16/9;">
+                        <iframe id="iframe-presentacion" loading="lazy" allowfullscreen style="position:absolute;inset:0;border:0;width:100%;height:100%;" src="https://www.canva.com/design/DAG15nCWUVc/VZkL2-0P2jNINdgJadye1Q/view?utm_content=DAG15nCWUVc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd5337f19e2&embed"></iframe>
+                    </div>
+                    <p style="text-align:center;margin-top:12px;">Si no carga el visor, puedes abrir la presentación:</p>
+                    <p style="text-align:center;">
+                        <a id="btn-presentacion" class="btn-archivo" href="https://www.canva.com/design/DAG15nCWUVc/VZkL2-0P2jNINdgJadye1Q/view?utm_content=DAG15nCWUVc&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=hd5337f19e2" target="_blank" rel="noopener noreferrer">Abrir en Canva</a>
+                    </p>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-materia">
+        <div class="contenedor">
+            <p>&copy; 2024 - Milagros Guerrero - Portafolio Digital</p>
+        </div>
+    </footer>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const btn = document.getElementById('btn-presentacion');
+        const iframe = document.getElementById('iframe-presentacion');
+        fetch('img/Teologia/index.json')
+            .then(r => r.ok ? r.json() : Promise.reject(new Error('HTTP ' + r.status)))
+            .then(data => {
+                if (data && data.presentacion && data.presentacion.src) {
+                    btn.href = data.presentacion.src.startsWith('http')
+                        ? data.presentacion.src
+                        : `img/Teologia/${data.presentacion.src.replace(/^\.\/+/, '')}`;
+                    if (data.presentacion.texto) btn.textContent = data.presentacion.texto;
+                }
+                if (data && data.presentacion && data.presentacion.canva && iframe) {
+                    const url = data.presentacion.canva.includes('embed') ? data.presentacion.canva : `${data.presentacion.canva}${data.presentacion.canva.includes('?') ? '&' : '?'}embed`;
+                    iframe.src = url;
+                }
+            })
+            .catch(err => console.log('Presentación JSON no disponible:', err.message));
+    });
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>
